@@ -73,9 +73,9 @@
               "locale" : "en_US"
             }
           ],
-          "productID" : "com.todosVuelan.annual_pay",
+          "productID" : "todosVuelan.MyInAppPurchase.Annual",
           "recurringSubscriptionPeriod" : "P1Y",
-          "referenceName" : "AnnualPay",
+          "referenceName" : "Anual Subscription",
           "subscriptionGroupID" : "28E1BE29",
           "type" : "RecurringSubscription"
         }
