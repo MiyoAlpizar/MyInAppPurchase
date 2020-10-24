@@ -1,0 +1,89 @@
+{
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "E9230B4C",
+      "localizations" : [
+        {
+          "description" : "Remove the adds forever",
+          "displayName" : "Remove adds",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.todosVuelan.remove",
+      "referenceName" : "RemoveAdds",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "8E2E2F6B",
+      "localizations" : [
+        {
+          "description" : "Unlcok this features",
+          "displayName" : "Unlock",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.todosVuelan.unlock",
+      "referenceName" : "Unlock",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "4766B846",
+      "localizations" : [
+        {
+          "description" : "Get this green gems",
+          "displayName" : "Gems",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.todosVuelan.gems",
+      "referenceName" : "Gems",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "28E1BE29",
+      "localizations" : [
+
+      ],
+      "name" : "Ben",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "914B4198",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "You pay annualy for this, and receive awesome",
+              "displayName" : "Annual Pay For Awesome Stuff",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.todosVuelan.annual_pay",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "AnnualPay",
+          "subscriptionGroupID" : "28E1BE29",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 0
+  }
+}
