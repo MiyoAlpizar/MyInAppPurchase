@@ -42,7 +42,16 @@ class SuscribeViewController: UIViewController {
         IAPHelper.shared.restore { (result) in
             switch result {
             case .success(let transaction):
-                print(transaction)
+                print(transaction.transactionState)
+                print(transaction.transactionIdentifier ?? "No id")
+                print(transaction.payment.applicationUsername ?? "No user name")
+                print(transaction.payment.productIdentifier)
+                print(transaction.payment.requestData ?? "No data")
+                print(transaction.original?.transactionDate ?? "No date")
+                
+                let alert = UIAlertController(title: "Restore Purchase Successful", message: "Your subscription was successful restored", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Great", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             case .failure(let error):
                 print(error)
             }

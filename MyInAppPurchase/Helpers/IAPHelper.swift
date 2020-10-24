@@ -122,6 +122,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
                 SKPaymentQueue.default().finishTransaction($0)
             case .restored:
                 onRestoreProductHandler?(.success($0))
+                SKPaymentQueue.default().finishTransaction($0)
             case .failed:
                 if let error = $0.error as? SKError {
                     if error.code != .paymentCancelled {
