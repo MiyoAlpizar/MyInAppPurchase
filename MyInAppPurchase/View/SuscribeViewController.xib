@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuscribeViewController" customModule="MyInAppPurchase" customModuleProvider="target">
             <connections>
-                <outlet property="suscribeBtn" destination="TR5-SW-nWz" id="oUr-PY-oxB"/>
+                <outlet property="restoreBtn" destination="kyW-rS-9h1" id="SPQ-Q5-HUp"/>
+                <outlet property="sucribeMonth" destination="K1g-VP-UVm" id="3Jk-ZO-fZH"/>
+                <outlet property="suscribe6Months" destination="INv-JA-tKt" id="gw9-UM-18B"/>
+                <outlet property="suscribeBtn" destination="ODI-Hy-rfH" id="OTQ-qm-1ZZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,33 +22,132 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR5-SW-nWz">
-                    <rect key="frame" x="20" y="423" width="374" height="50"/>
-                    <color key="backgroundColor" name="AccentColor"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="lSu-Aq-JHn">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscribe to Pro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6f-Fx-1WC">
+                    <rect key="frame" x="20" y="80" width="374" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="0.95890410960000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get awesome stuff by subscribing per year, month, or week. Once You suscribe, you will get this awesome features." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmT-e3-cwO">
+                    <rect key="frame" x="20" y="124" width="374" height="71.666666666666686"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gV-hL-DHn">
+                    <rect key="frame" x="0.0" y="531" width="414" height="365"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="d8l-0c-rLn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="365"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyW-rS-9h1">
+                                <rect key="frame" x="118.66666666666669" y="278" width="177" height="33"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Restore my purchases">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="restore:" destination="-1" eventType="touchUpInside" id="mJc-YN-h6T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODI-Hy-rfH">
+                                <rect key="frame" x="20" y="188" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="N4e-f8-vJa"/>
+                                </constraints>
+                                <state key="normal" title="$99.99 / Year">
+                                    <color key="titleColor" white="1" alpha="0.95890410960000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="suscribeYear:" destination="-1" eventType="touchUpInside" id="rfU-18-j1Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INv-JA-tKt">
+                                <rect key="frame" x="20" y="114" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bqh-12-fXw"/>
+                                </constraints>
+                                <state key="normal" title="$69.99 / 6 Months">
+                                    <color key="titleColor" white="1" alpha="0.95890410960000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1g-VP-UVm">
+                                <rect key="frame" x="20" y="40" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="na2-Ld-yzG"/>
+                                </constraints>
+                                <state key="normal" title="$19.99 / Month">
+                                    <color key="titleColor" white="1" alpha="0.95890410960000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.50347816779999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="INv-JA-tKt" firstAttribute="top" secondItem="K1g-VP-UVm" secondAttribute="bottom" constant="24" id="6yL-7b-phs"/>
+                            <constraint firstAttribute="trailing" secondItem="ODI-Hy-rfH" secondAttribute="trailing" constant="20" id="7vQ-ir-1Ud"/>
+                            <constraint firstItem="ODI-Hy-rfH" firstAttribute="top" secondItem="INv-JA-tKt" secondAttribute="bottom" constant="24" id="A7d-xJ-Dg5"/>
+                            <constraint firstItem="kyW-rS-9h1" firstAttribute="top" secondItem="ODI-Hy-rfH" secondAttribute="bottom" constant="40" id="Bc9-sJ-sKU"/>
+                            <constraint firstItem="K1g-VP-UVm" firstAttribute="leading" secondItem="d8l-0c-rLn" secondAttribute="leading" constant="20" id="OWU-7b-jaa"/>
+                            <constraint firstAttribute="trailing" secondItem="INv-JA-tKt" secondAttribute="trailing" constant="20" id="YhL-di-cQB"/>
+                            <constraint firstAttribute="trailing" secondItem="K1g-VP-UVm" secondAttribute="trailing" constant="20" id="dVo-xJ-eMG"/>
+                            <constraint firstItem="kyW-rS-9h1" firstAttribute="centerX" secondItem="d8l-0c-rLn" secondAttribute="centerX" id="gAV-ba-iGL"/>
+                            <constraint firstItem="INv-JA-tKt" firstAttribute="leading" secondItem="d8l-0c-rLn" secondAttribute="leading" constant="20" id="nv3-I5-kwy"/>
+                            <constraint firstItem="ODI-Hy-rfH" firstAttribute="leading" secondItem="d8l-0c-rLn" secondAttribute="leading" constant="20" id="t0B-rp-zyu"/>
+                        </constraints>
+                    </view>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="4HD-Ow-Fum"/>
+                        <constraint firstItem="K1g-VP-UVm" firstAttribute="top" secondItem="2gV-hL-DHn" secondAttribute="top" constant="40" id="WuL-fO-7jF"/>
                     </constraints>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Suscribe"/>
-                    <connections>
-                        <action selector="suscribe:" destination="-1" eventType="touchUpInside" id="S37-Vc-2oK"/>
-                    </connections>
-                </button>
+                    <blurEffect style="regular"/>
+                </visualEffectView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TR5-SW-nWz" secondAttribute="trailing" constant="20" id="V4N-Ho-e0o"/>
-                <constraint firstItem="TR5-SW-nWz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="a3U-0K-2G9"/>
-                <constraint firstItem="TR5-SW-nWz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gYV-pc-Aqc"/>
+                <constraint firstItem="ZmT-e3-cwO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="6zo-jN-Vmi"/>
+                <constraint firstAttribute="trailing" secondItem="i6f-Fx-1WC" secondAttribute="trailing" constant="20" id="8ZY-Hz-Icm"/>
+                <constraint firstItem="2gV-hL-DHn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ahw-1O-49d"/>
+                <constraint firstAttribute="bottom" secondItem="lSu-Aq-JHn" secondAttribute="bottom" id="Fxo-81-5MZ"/>
+                <constraint firstItem="i6f-Fx-1WC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="IKV-PM-bcY"/>
+                <constraint firstItem="i6f-Fx-1WC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="MQI-Fp-es4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lSu-Aq-JHn" secondAttribute="trailing" id="S0K-hB-WIR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kyW-rS-9h1" secondAttribute="bottom" constant="20" id="ZeS-Ga-lbY"/>
+                <constraint firstItem="lSu-Aq-JHn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="baU-gs-w9F"/>
+                <constraint firstItem="lSu-Aq-JHn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cQK-Jv-fRL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2gV-hL-DHn" secondAttribute="trailing" id="iJg-ih-kdJ"/>
+                <constraint firstItem="ZmT-e3-cwO" firstAttribute="top" secondItem="i6f-Fx-1WC" secondAttribute="bottom" constant="20" id="kcA-zX-3Lc"/>
+                <constraint firstAttribute="trailing" secondItem="ZmT-e3-cwO" secondAttribute="trailing" constant="20" id="kqz-to-rym"/>
+                <constraint firstAttribute="bottom" secondItem="2gV-hL-DHn" secondAttribute="bottom" id="tRM-yV-TO3"/>
             </constraints>
-            <point key="canvasLocation" x="-80" y="106"/>
+            <point key="canvasLocation" x="-81.159420289855078" y="105.80357142857143"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="background" width="4912" height="7360"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

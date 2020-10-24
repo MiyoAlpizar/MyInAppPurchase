@@ -13,6 +13,9 @@ class IAPHelper: NSObject{
     static let shared = IAPHelper()
     
     var onReceiveProductsHandler: ((Result<[SKProduct], IAPHelperError>) -> Void)?
+    var onBuyProductHandler: ((Result<Bool, Error>) -> Void)?
+    
+    var onRestoreProductHandler: ((Result<SKPaymentTransaction, Error>) -> Void)?
     
     private override init() {
         super.init()
@@ -24,8 +27,6 @@ class IAPHelper: NSObject{
         case paymentWasCancelled
         case productRequestFailed
     }
-    
-    
     
     func getProducts(withHandler productsReceiveHandler: @escaping (_ result: Result<[SKProduct], IAPHelperError>) -> Void) {
         // Keep the handler (closure) that will be called when requesting for
@@ -43,17 +44,29 @@ class IAPHelper: NSObject{
         request.start()
     }
     
-    func buy(product: SKProduct, withUsername username: String="") {
+    func buy(product: SKProduct, withHandler handler: @escaping ((_ result: Result<Bool, Error>) -> Void)) {
         let payment = SKMutablePayment(product: product)
-        payment.applicationUsername = username
-        SKPaymentQueue.default().add(self)
         SKPaymentQueue.default().add(payment)
+        onBuyProductHandler = handler
         //Bundle.main.appStoreReceiptURL
     }
     
-    func restore(withUsername username: String? = nil) {
+    func startObserving() {
         SKPaymentQueue.default().add(self)
-        SKPaymentQueue.default().restoreCompletedTransactions(withApplicationUsername: username)
+    }
+    
+    func stopObserving() {
+        SKPaymentQueue.default().remove(self)
+    }
+    
+    func canMakePayments() -> Bool {
+        return SKPaymentQueue.canMakePayments()
+    }
+    
+    func restore(withHandler handler: @escaping(_ result: Result<SKPaymentTransaction, Error>) -> Void) {
+        SKPaymentQueue.default().add(self)
+        SKPaymentQueue.default().restoreCompletedTransactions()
+        onRestoreProductHandler = handler
     }
     
     fileprivate func getProductIDs() -> [String]? {
@@ -104,11 +117,23 @@ extension IAPHelper: SKPaymentTransactionObserver {
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         transactions.forEach {
             switch $0.transactionState {
-            case .purchasing: ()
-            case .deferred: ()
-            case .failed, .purchased, .restored: SKPaymentQueue.default().finishTransaction($0)
-            @unknown default:
-                break
+            case .purchased:
+                onBuyProductHandler?(.success(true))
+                SKPaymentQueue.default().finishTransaction($0)
+            case .restored:
+                onRestoreProductHandler?(.success($0))
+            case .failed:
+                if let error = $0.error as? SKError {
+                    if error.code != .paymentCancelled {
+                        onBuyProductHandler?(.failure(error))
+                    } else {
+                        onBuyProductHandler?(.failure(IAPHelperError.paymentWasCancelled))
+                    }
+                    print("IAP Error:", error.localizedDescription)
+                }
+                SKPaymentQueue.default().finishTransaction($0)
+            case .deferred, .purchasing: break
+            @unknown default: break
             }
         }
     }
