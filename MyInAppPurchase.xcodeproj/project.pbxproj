@@ -16,6 +16,7 @@
 		A263BF1125439ADE008D62C4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A263BF0F25439ADE008D62C4 /* HomeView.swift */; };
 		A263BF1225439ADE008D62C4 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A263BF1025439ADE008D62C4 /* HomeView.xib */; };
 		A263BF162543A08E008D62C4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A263BF152543A08E008D62C4 /* StoreKit.framework */; };
+		A263BF1A2543DAAD008D62C4 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A263BF192543DAAD008D62C4 /* IAPHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		A263BF0F25439ADE008D62C4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A263BF1025439ADE008D62C4 /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		A263BF152543A08E008D62C4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A263BF192543DAAD008D62C4 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		A263BEEB25437795008D62C4 /* MyInAppPurchase */ = {
 			isa = PBXGroup;
 			children = (
+				A263BF182543DA9C008D62C4 /* Helpers */,
 				A263BF04254398B1008D62C4 /* View */,
 				A263BEEC25437795008D62C4 /* AppDelegate.swift */,
 				A263BEEE25437795008D62C4 /* SceneDelegate.swift */,
@@ -93,6 +96,14 @@
 				A263BF152543A08E008D62C4 /* StoreKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A263BF182543DA9C008D62C4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A263BF192543DAAD008D62C4 /* IAPHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 				A263BEF125437795008D62C4 /* ViewController.swift in Sources */,
 				A263BF1125439ADE008D62C4 /* HomeView.swift in Sources */,
 				A263BEED25437795008D62C4 /* AppDelegate.swift in Sources */,
+				A263BF1A2543DAAD008D62C4 /* IAPHelper.swift in Sources */,
 				A263BEEF25437795008D62C4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
