@@ -34,15 +34,7 @@ class SuscribeViewController: UIViewController {
     }
     
     @IBAction func suscribeMonth(_ sender: Any) {
-        //buy(2)
-        IAPHelper.shared.refreshSubscriptionsStatus { (result) in
-            switch result {
-            case .success(let date):
-                print(date)
-            case .failure(let error):
-                print(error)
-            }
-        }
+        buy(2)
     }
     
     
