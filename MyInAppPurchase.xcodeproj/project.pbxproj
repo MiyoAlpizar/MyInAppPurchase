@@ -11,6 +11,8 @@
 		A21A337625448A2900208791 /* SuscribeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A21A337425448A2900208791 /* SuscribeViewController.xib */; };
 		A21BA48525449EF1001BBE28 /* IAP_ProductIDs.plist in Resources */ = {isa = PBXBuildFile; fileRef = A21BA48425449EF1001BBE28 /* IAP_ProductIDs.plist */; };
 		A21BA4892544C288001BBE28 /* Button+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21BA4882544C287001BBE28 /* Button+Extensions.swift */; };
+		A240941C2545F8A10087729F /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240941B2545F8A10087729F /* AppHelper.swift */; };
+		A240941F2545F9230087729F /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A240941E2545F9230087729F /* StringExtensions.swift */; };
 		A263BEED25437795008D62C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A263BEEC25437795008D62C4 /* AppDelegate.swift */; };
 		A263BEEF25437795008D62C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A263BEEE25437795008D62C4 /* SceneDelegate.swift */; };
 		A263BEF125437795008D62C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A263BEF025437795008D62C4 /* ViewController.swift */; };
@@ -28,6 +30,8 @@
 		A21A337425448A2900208791 /* SuscribeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuscribeViewController.xib; sourceTree = "<group>"; };
 		A21BA48425449EF1001BBE28 /* IAP_ProductIDs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = IAP_ProductIDs.plist; sourceTree = "<group>"; };
 		A21BA4882544C287001BBE28 /* Button+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Extensions.swift"; sourceTree = "<group>"; };
+		A240941B2545F8A10087729F /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
+		A240941E2545F9230087729F /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		A263BEE925437795008D62C4 /* MyInAppPurchase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyInAppPurchase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A263BEEC25437795008D62C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A263BEEE25437795008D62C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				A21BA4882544C287001BBE28 /* Button+Extensions.swift */,
+				A240941E2545F9230087729F /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				A263BF192543DAAD008D62C4 /* IAPHelper.swift */,
+				A240941B2545F8A10087729F /* AppHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -202,6 +208,8 @@
 				A21A337525448A2900208791 /* SuscribeViewController.swift in Sources */,
 				A263BEF125437795008D62C4 /* ViewController.swift in Sources */,
 				A263BF1125439ADE008D62C4 /* HomeView.swift in Sources */,
+				A240941F2545F9230087729F /* StringExtensions.swift in Sources */,
+				A240941C2545F8A10087729F /* AppHelper.swift in Sources */,
 				A21BA4892544C288001BBE28 /* Button+Extensions.swift in Sources */,
 				A263BEED25437795008D62C4 /* AppDelegate.swift in Sources */,
 				A263BF1A2543DAAD008D62C4 /* IAPHelper.swift in Sources */,

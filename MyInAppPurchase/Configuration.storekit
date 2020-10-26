@@ -78,6 +78,50 @@
           "referenceName" : "Anual Subscription",
           "subscriptionGroupID" : "28E1BE29",
           "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "69.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "9D534D5D",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Get this awesome stuff by 6 Months",
+              "displayName" : "6 Months ",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "todosVuelan.MyInAppPurchase.6Months",
+          "recurringSubscriptionPeriod" : "P6M",
+          "referenceName" : "6 Months Duration",
+          "subscriptionGroupID" : "28E1BE29",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "19.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "15F6EC1C",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Get this awesome stuff by 1 Month",
+              "displayName" : "1 Month",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "todosVuelan.MyInAppPurchase.Month",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Per Month",
+          "subscriptionGroupID" : "28E1BE29",
+          "type" : "RecurringSubscription"
         }
       ]
     }
